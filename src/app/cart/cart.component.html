@@ -1,0 +1,23 @@
+<div class="container mt-4">
+    <h3>Carrito de Compra</h3>
+    <div class="w-100" style="display: flex;">
+        <label><strong>Creado: </strong></label><label>{{cart.creationDate}}</label>
+    </div>
+
+    <table class="table table-dark text-center">
+        <thead>
+            <tr>
+                <th scope="col">Id Producto</th>
+                <th scope="col">Precio unitario</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.name}}</td>
+                <td>{{product.productPrice}}</td>
+                <td>{{product.productAmount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

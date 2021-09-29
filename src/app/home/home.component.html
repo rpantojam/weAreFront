@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <div style="text-align: right;">
+        <a style="margin-left: 10px;" routerLink='/products'>Crear Producto</a>
+        <a style="margin-left: 10px;" routerLink='/cart'>Ver carrito</a>
+    </div>
+    <table class="table table-dark text-center">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Existencias</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.curPrice}}</td>
+                <td>{{product.availableAmount}}</td>
+                <td>
+                    <div>
+                        <button [disabled]="product.availableAmount === 0" class="btn btn-outline-primary" style="height: 30px; width: 30px; padding: 0px; margin: 0px;" routerLink="/addCart" [queryParams]="{pId: product.id, avAm: product.availableAmount, pn: product.name, price: product.curPrice}">
+                            <i class="fas fa-cart-plus "></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

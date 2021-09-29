@@ -1,0 +1,13 @@
+<div class="container mt-4">
+    <h4>Producto:</h4>
+    <label>{{productName}}</label>
+    <h4>Cantidad disponible:</h4>
+    <label>{{avAmount}}</label>
+    <h4>Precio de compra:</h4>
+    <label>{{price}}</label>
+    <div>
+        <h4>Cantidad:</h4>
+        <input [(ngModel)]="reqAmount" type="number" />
+        <button (click)="addToCart()">Agregar al carrito</button>
+    </div>
+</div>
