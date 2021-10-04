@@ -16,7 +16,7 @@ export class CartProductsService {
     constructor(private httpClient: HttpClient) { }
 
     public addToCart(dto: CartProductsDto): Observable<CartProducts> {
-        return this.httpClient.post<CartProducts>(this.serverURL + 'add', dto);
+        return this.httpClient.post<CartProducts>(this.serverURL + 'addProductToCart', dto);
     }
 
 }
